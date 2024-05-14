@@ -1,0 +1,40 @@
+// 背景图 覆盖
+@mixin bg-cover() {
+  background: {
+    size: cover;
+    repeat: no-repeat;
+    position: center center;
+  }
+}
+
+// 背景图 宽度占满
+@mixin bg-full-width() {
+  background: {
+    size: 100%;
+    repeat: no-repeat;
+    position: center center;
+  }
+}
+
+// 省略号
+@mixin ellipsis($row-count: 1) {
+  @if $row-count == 1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  } @else {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $row-count;
+  }
+}
+
+@mixin hide-scroll-bar() {
+  scrollbar-width: none; // 火狐
+  -ms-overflow-style: none; // IE10+
+  overflow: -moz-scrollbars-none; // firfox
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+}

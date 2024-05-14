@@ -1,0 +1,41 @@
+{
+  "compilerOptions": {
+    "target": "ESNext", // 将代码编译为最新版本的 JS
+    "useDefineForClassFields": true, // 使用 Object.defineProperty 定义 class 中的属性，而非使用 obj.key = value 的形式定义属性
+    "module": "ESNext", // 使用 ES Module 格式打包编译后的文件
+    "moduleResolution": "Node", // 使用 Node 的模块解析策略
+    "types": ["vite/client", "element-plus/global"],
+
+    /* Strict Type-Checking Options */
+    "strict": true /* Enable all strict type-checking options. */,
+    // "noImplicitAny": true,                 /* Raise error on expressions and declarations with an implied 'any' type. */
+    // "strictNullChecks": true,              /* Enable strict null checks. */
+    // "strictFunctionTypes": true,           /* Enable strict checking of function types. */
+    // "strictBindCallApply": true,           /* Enable strict 'bind', 'call', and 'apply' methods on functions. */
+    // "strictPropertyInitialization": true,  /* Enable strict checking of property initialization in classes. */
+    // "noImplicitThis": true,                /* Raise error on 'this' expressions with an implied 'any' type. */
+    // "alwaysStrict": true,                  /* Parse in strict mode and emit "use strict" for each source file. */
+    "jsx": "preserve",
+    "resolveJsonModule": true, // 允许引入 JSON 文件
+    "isolatedModules": true, // 该属性要求所有文件都是 ES Module 模块。
+    "esModuleInterop": true, // 允许使用 import 引入使用 export = 导出的内容
+    "lib": ["ESNext", "DOM"], // 引入 ES 最新特性和 DOM 接口的类型定义
+    "skipLibCheck": true, // 跳过对 .d.ts 文件的类型检查
+    "noEmit": true,
+    "baseUrl": "./",
+    "paths": {
+      "@": ["src"],
+      "@/*": ["src/*"]
+    }
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "build/**/*.ts",
+    "build/**/*.d.ts",
+    "vite.config.ts"
+  ],
+  "exclude": ["node_modules", "dist", "**/*.js"]
+}
