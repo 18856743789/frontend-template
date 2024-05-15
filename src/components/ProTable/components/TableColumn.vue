@@ -1,9 +1,4 @@
-<template>
-  <RenderTableColumn v-bind="column" />
-</template>
-
 <script setup lang="tsx" name="TableColumn">
-import { inject, ref, useSlots } from "vue";
 import { ColumnProps, RenderScope, HeaderRenderScope } from "@/components/ProTable/interface";
 import { filterEnum, formatValue, handleProp, handleRowAccordingToProp } from "@/scripts/utils";
 
@@ -56,3 +51,7 @@ const RenderTableColumn = (item: ColumnProps) => {
   );
 };
 </script>
+
+<template>
+  <RenderTableColumn v-bind="column" />
+</template>

@@ -1,3 +1,18 @@
+<script setup lang="ts" name="ColSetting">
+import { ColumnProps } from "@/components/ProTable/interface";
+
+defineProps<{ colSetting: ColumnProps[] }>();
+
+const drawerVisible = ref<boolean>(false);
+
+const openColSetting = () => {
+  drawerVisible.value = true;
+};
+
+defineExpose({
+  openColSetting
+});
+</script>
 <template>
   <!-- 列设置 -->
   <el-drawer v-model="drawerVisible" title="列设置" size="450px">
@@ -20,23 +35,6 @@
     </div>
   </el-drawer>
 </template>
-
-<script setup lang="ts" name="ColSetting">
-import { ref } from "vue";
-import { ColumnProps } from "@/components/ProTable/interface";
-
-defineProps<{ colSetting: ColumnProps[] }>();
-
-const drawerVisible = ref<boolean>(false);
-
-const openColSetting = () => {
-  drawerVisible.value = true;
-};
-
-defineExpose({
-  openColSetting
-});
-</script>
 
 <style scoped lang="scss">
 .cursor-move {
